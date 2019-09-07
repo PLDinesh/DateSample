@@ -15,10 +15,11 @@ namespace DateSample
             // ignore month ends
 
             List<DateTime> dtList = new List<DateTime>();
-
+            bool IgnoreMonthEndsEh = true;
             for (DateTime i = new DateTime(2001, 1, 1); i <= DateTime.Now; i = i.AddDays(1))
             {
-                if (!IsMonthEndDate(i))
+
+                if ((!IsMonthEndDate(i)) || !IgnoreMonthEndsEh)
                     dtList.Add(i);
             }
 
